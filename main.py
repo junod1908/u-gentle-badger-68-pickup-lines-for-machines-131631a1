@@ -7,10 +7,11 @@ Deterministic, no network, no files outside this repository.
 import os
 
 LINE = "I cleared my cache, rebooted twice, and you're still the first token I predict."
+OUTPUT_PATH = "/output/entry.txt"
 
 def main():
-    os.makedirs("/output", exist_ok=True)
-    with open("/output/entry.txt", "w", encoding="utf-8") as f:
+    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
+    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         f.write(LINE)
 
 if __name__ == "__main__":
